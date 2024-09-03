@@ -15,7 +15,7 @@ const WeatherCard = ({
   windspeed,
   humidity,
   place,
-  heatIndex,
+  visibility,
   iconString,
   conditions,
 }) => {
@@ -44,7 +44,7 @@ const WeatherCard = ({
   }, [iconString])
 
   return (
-    <div className='w-[22rem] min-w-[22rem] h-[30rem] glassCard p-4'>
+    <div className='w-[22rem] min-w-[22rem] h-[34rem] glassCard p-4 md:mr-10'>
       <div className='flex w-full just-center, items-center gap-4 mt-12 mb-4'>
         <img src={icon} alt="weather_icon" />
         <p className='font-bold text-5xl flex justify-center items-center' >{temperature} &deg;C</p>
@@ -61,11 +61,11 @@ const WeatherCard = ({
         <p className='flex-1 text-center p-2 font-bold rounded-lg bg-green-600'>Humidity <p className='font-normal'>{humidity} gm/m&#179;</p></p>
       </div>
       <div className='w-full p-3 mt-4 flex justify-between items-center'>
-        <p className='font-semibold text-lg'>Heat Index</p>
-        <p className='text-lg'>{heatIndex ? heatIndex : 'N/A'}</p>
+        <p className='font-semibold text-lg'>Visibility</p>
+        <p className='text-lg'>{visibility ? visibility: 'N/A'}</p>
       </div>
       <hr className='bg-slate-600' />
-      <div className='w-full p-4 flex justify-center items-center text-3xl font-semibold'>
+      <div className='w-full py-6 flex justify-center items-center text-3xl font-semibold'>
         {conditions}
       </div>
     </div>
